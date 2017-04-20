@@ -1,0 +1,15 @@
+server:
+  port: 8031
+spring:
+  application:
+    name: hystrix-turbine
+security:
+  basic:
+    enabled: false
+turbine:
+  app-config-list: eureka-client,service-ribbon   # 配置Eureka中的serviceId列表，表明监控哪些服务
+  cluster-name-expression: new String("default")
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/

@@ -1,0 +1,9 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    eureka-server-u-r-l-context: http://localhost:8761/eureka/
+
