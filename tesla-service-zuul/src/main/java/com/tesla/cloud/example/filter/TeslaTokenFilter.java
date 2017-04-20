@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 
 @Component
-public class TeslaFilter extends ZuulFilter {
+public class TeslaTokenFilter extends ZuulFilter {
 
 
 
-    public static final Logger log = LoggerFactory.getLogger(TeslaFilter.class);
+    public static final Logger log = LoggerFactory.getLogger(TeslaTokenFilter.class);
 
     @Override
     public String filterType() {

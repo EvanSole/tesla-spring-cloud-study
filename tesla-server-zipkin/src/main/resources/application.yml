@@ -1,0 +1,6 @@
+server:
+  port: 9495
+spring:
+  application:
+    name: server-zipkin
+

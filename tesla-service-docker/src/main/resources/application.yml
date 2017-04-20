@@ -1,0 +1,13 @@
+server:
+  port: 8787
+spring:
+  application:
+    name: service-docker
+
+eureka:
+  client:
+    eureka-server-u-r-l-context: http://localhost:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    prefer-ip-address: true

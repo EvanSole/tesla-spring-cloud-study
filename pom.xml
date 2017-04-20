@@ -23,7 +23,11 @@
 		<module>tesla-service-zuul</module>
         <module>tesla-config-server</module>
 		<module>tesla-config-client</module>
-	</modules>
+        <module>tesla-server-zipkin</module>
+        <module>tesla-server-zipkin-a</module>
+        <module>tesla-server-zipkin-b</module>
+        <module>tesla-service-docker</module>
+    </modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
