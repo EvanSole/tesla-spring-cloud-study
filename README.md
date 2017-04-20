@@ -1,3 +1,6 @@
-Spring cloud 
+# Spring cloud demo
 
-1.5.2 
+| Name                                    | Version                            |
+| ---------------------------------------- | ---------------------------------- |
+| spring boot                              | 1.5.2                      |  
+| spring cloud                             | Dalston.RELEASE |
