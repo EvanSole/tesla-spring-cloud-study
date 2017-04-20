@@ -15,12 +15,12 @@ public class ConfigClientApplication
         SpringApplication.run(ConfigClientApplication.class, args);
     }
 
-    @Value("${edwin}")
-    String sport;
+    @Value("${foo}")
+    String foo;
 
     @RequestMapping(value = "/hello")
     public String hello(){
-        return sport;
+        return foo;
     }
 
 }
