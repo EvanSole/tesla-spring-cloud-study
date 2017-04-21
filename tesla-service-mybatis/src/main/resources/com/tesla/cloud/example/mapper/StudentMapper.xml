@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tesla.cloud.example.mapper.StudentMapper">
+    <!-- type为实体类Student，包名已经配置，可以直接写类名 -->
+    <resultMap id="BaseResultMap" type="Student">
+        <id property="id" column="id" />
+        <result property="userName" column="user_name" />
+        <result property="scoreSum" column="score_sum" />
+        <result property="scoreAvg" column="score_avg" />
+        <result property="age" column="age" />
+    </resultMap>
+
+    <select id="getById" resultMap="BaseResultMap" resultType="Student">
+        SELECT ID,USER_NAME,SCORE_SUM,SCORE_AVG,AGE FROM T_STUDENT WHERE ID = #{id}
+    </select>
+
+    <select id="queryByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" resultType="list">
+        SELECT ID,USER_NAME,SCORE_SUM,SCORE_AVG,AGE FROM T_STUDENT WHERE NAME LIKE CONCAT('%',#{name},'%')
+    </select>
+
+    <select id="getNameById" resultType="string">
+        SELECT USER_NAME FROM T_STUDENT WHERE ID = #{id}
+    </select>
+
+</mapper>
