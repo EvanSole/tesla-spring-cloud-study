@@ -5,6 +5,7 @@ import java.util.Properties;
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
+import com.tesla.cloud.example.config.datasource.DynamicDataSource;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -44,6 +45,7 @@ public class MybatisAutoConfiguration {
     @Autowired
     private ResourceLoader resourceLoader = new DefaultResourceLoader();
 
+
     @PostConstruct
     public void checkConfigFileExists() {
         if (this.properties.isCheckConfigLocation()) {
@@ -57,9 +59,9 @@ public class MybatisAutoConfiguration {
 
     @Bean(name = "sqlSessionFactory")
     @ConditionalOnMissingBean
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+    public SqlSessionFactory sqlSessionFactory(DynamicDataSource dataSource) throws Exception {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
-        factory.setDataSource(dataSource);
+        factory.setDataSource(dataSource); //dataSource
         if (StringUtils.hasText(this.properties.getConfig())) {
             factory.setConfigLocation(this.resourceLoader.getResource(this.properties.getConfig()));
         } else {
@@ -81,7 +83,7 @@ public class MybatisAutoConfiguration {
 
 
     @Bean
-    public PageHelper pageHelper(DataSource dataSource) {
+    public PageHelper pageHelper(DynamicDataSource dataSource) {
         _LOG.info(" Register myBatis plugin the PageHelper. ");
         PageHelper pageHelper = new PageHelper();
         Properties p = new Properties();
@@ -91,6 +93,7 @@ public class MybatisAutoConfiguration {
         pageHelper.setProperties(p);
         return pageHelper;
     }
+
 
 
 }

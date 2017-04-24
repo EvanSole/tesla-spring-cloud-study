@@ -5,10 +5,10 @@ spring:
     name: service-mybatis
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/db_tesla_test?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true
     username: root
     password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
     # 初始化大小，最小，最大
     initialSize: 5
     minIdle: 5
@@ -29,6 +29,21 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     # 合并多个DruidDataSource的监控数据
     # useGlobalDataSourceStat: true
+custom:
+ datasource:
+  names: ds1,ds2
+  ds1:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_tesla_test?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  ds2:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_tesla_test_0_1?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
 
 mybatis:
   config-location: classpath*:com/tesla/cloud/example/mapper/*Mapper.xm
