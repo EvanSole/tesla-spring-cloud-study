@@ -28,7 +28,8 @@
         <module>tesla-server-zipkin-b</module>
         <module>tesla-service-docker</module>
 		<module>tesla-service-mybatis</module>
-	</modules>
+        <module>tesla-service-stream</module>
+    </modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

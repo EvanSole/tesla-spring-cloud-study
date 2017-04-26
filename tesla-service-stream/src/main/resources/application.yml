@@ -1,0 +1,32 @@
+server:
+  port: 8767
+spring:
+  application:
+    name: service-stream
+  cloud:
+    stream:
+      binders:
+        <channelName>:
+         binder: <binderName>
+        <binderName>:
+         type: kafka
+         environment:
+          spring:
+           cloud:
+            stream:
+             kafka:
+              binder:
+               brokers: 127.0.0.1:9092
+               zk-nodes: 127.0.0.1:2181
+
+      input:
+       destination: wsh-topic-01
+       group: gtoup-01
+       consumer:
+        concurrency: 1
+        partitioned: false
+      output:
+       destination: wsh-topic-01
+       content-type: text/plain
+       producer:
+        partitionCount: 1

@@ -1,5 +1,7 @@
 package com.tesla.cloud.example.config.datasource;
 
+import com.tesla.cloud.example.common.DbShareField;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,5 +12,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface TargetDataSource {
-    String value();
+
+    DbShareField dbShareField() default DbShareField.DEFAULT;
+
 }

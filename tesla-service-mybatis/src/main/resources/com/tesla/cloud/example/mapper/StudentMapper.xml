@@ -16,7 +16,7 @@
     </select>
 
     <select id="queryByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" resultType="list">
-        SELECT ID,USER_NAME,SCORE_SUM,SCORE_AVG,AGE FROM T_STUDENT WHERE NAME LIKE CONCAT('%',#{name},'%')
+        SELECT ID,USER_NAME,SCORE_SUM,SCORE_AVG,AGE FROM T_STUDENT WHERE USER_NAME LIKE CONCAT('%',#{userName},'%')
     </select>
 
     <select id="getNameById" resultType="string">
