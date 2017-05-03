@@ -22,7 +22,7 @@ public class EurekaClientApplication
 
     @RequestMapping("/hello")
     public String home(@RequestParam String name) {
-        return "Hi "+name+",i am from port:" + port;
+        return "Hi "+name+",i am from port:" + port +" [Eureka Client]";
     }
 
 

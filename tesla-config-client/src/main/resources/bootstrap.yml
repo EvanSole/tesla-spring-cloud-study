@@ -9,9 +9,15 @@ spring:
       discovery:
         enabled: true   # 默认false，设为true表示使用注册中心中的configServer配置而不自己配置configServer的uri
         service-id: tesla-config-server # 指定config server在服务发现中的serviceId，默认为：configServer
-#  rabbitmq:
-#    addresses: localhost
-#    port: 5672
+  rabbitmq:
+    addresses: localhost
+    port: 15672
+    username: guest
+    password: guest
+
+management:
+ security:
+  enabled: false
 
 eureka:
   client:

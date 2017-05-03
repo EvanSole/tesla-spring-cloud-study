@@ -29,7 +29,7 @@
         <module>tesla-service-docker</module>
 		<module>tesla-service-mybatis</module>
         <module>tesla-service-stream</module>
-    </modules>
+	</modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
